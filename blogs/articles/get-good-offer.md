@@ -2,11 +2,12 @@
 title: 如何找一份好工作？一步一步进入腾讯阿里等大厂
 sidebar: 'auto'
 categories:
- - 已整理笔记
+ - 原创文章
 tags:
  - 经验总结
 publish: true
 sticky : 1
+isShowComments: true
 ---
 
 ![](http://qny.volcanoblog.cn/markdown/a4cfd553a12bf420170925a20ccb50d3_r.jpg)
