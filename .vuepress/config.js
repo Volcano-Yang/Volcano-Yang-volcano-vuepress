@@ -1,5 +1,22 @@
 const moment = require("moment");
-const { leanCloud } = require("./secrets");
+// 根据需要切换环境为dev或product
+const ENV = "product";
+// const ENV = "dev";
+let valineConfig = {};
+if (ENV === "dev") {
+  const { leanCloud } = require("./secrets");
+  valineConfig = {
+    appId: leanCloud.appId,
+    appKey: leanCloud.appKey,
+    avatar: "monsterid",
+  };
+} else {
+  valineConfig = {
+    appId: `${secrets.COMMENT_APPID}`,
+    appKey: `${secrets.COMMENT_APPKEY}`,
+    avatar: "monsterid",
+  };
+}
 module.exports = {
   title: "杨灿就是杨火山",
   description: "",
@@ -23,11 +40,7 @@ module.exports = {
   theme: "reco",
   themeConfig: {
     // 配置评论插件，这里APPId和appKey需要换成自己的在leanCloud上的
-    valineConfig: {
-      appId: `${secrets.COMMENT_APPID}`, 
-      appKey: `${secrets.COMMENT_APPKEY}`,
-      avatar: "monsterid",
-    },
+    valineConfig,
     subSidebar: "auto", //在所有页面中启用自动生成子侧边栏，原 sidebar 仍然兼容
     nav: [
       {
@@ -59,10 +72,23 @@ module.exports = {
       socialLinks: [
         // 信息栏展示社交信息
         { icon: "reco-github", link: "https://github.com/Volcano-Yang" },
-        { icon: "reco-juejin", link: "https://juejin.cn/user/2383396940547821/posts" },
-        { icon: "reco-zhihu", link: "https://www.zhihu.com/people/yang-can-jiu-shi-yang-huo-shan/posts" },
-        { icon: "reco-wechat", link: "https://qny.volcanoblog.cn/markdown/公众号图片.png" },
-        { icon: "reco-csdn", link: "https://blog.csdn.net/qq_40618238?spm=1001.2100.3001.5343" },
+        {
+          icon: "reco-juejin",
+          link: "https://juejin.cn/user/2383396940547821/posts",
+        },
+        {
+          icon: "reco-zhihu",
+          link:
+            "https://www.zhihu.com/people/yang-can-jiu-shi-yang-huo-shan/posts",
+        },
+        {
+          icon: "reco-wechat",
+          link: "https://qny.volcanoblog.cn/markdown/公众号图片.png",
+        },
+        {
+          icon: "reco-csdn",
+          link: "https://blog.csdn.net/qq_40618238?spm=1001.2100.3001.5343",
+        },
         { icon: "reco-mail", link: "mailto:648941183@qq.com" },
       ],
     },
