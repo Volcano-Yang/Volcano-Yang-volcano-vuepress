@@ -24,8 +24,8 @@ module.exports = {
   themeConfig: {
     // 配置评论插件，这里APPId和appKey需要换成自己的在leanCloud上的
     valineConfig: {
-      appId: leanCloud.appId,
-      appKey: leanCloud.appKey,
+      appId: `${secrets.COMMENT_APPID}`, 
+      appKey: `${secrets.COMMENT_APPKEY}`,
       avatar: "monsterid",
     },
     subSidebar: "auto", //在所有页面中启用自动生成子侧边栏，原 sidebar 仍然兼容
