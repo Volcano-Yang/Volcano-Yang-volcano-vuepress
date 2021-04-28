@@ -23,7 +23,7 @@ module.exports = {
   themeConfig: {
     valineConfig: {
       appId: "{{secrets.COMMENT_APPID}}", 
-      appKey: "{{COMMENT_APPKEY}}",
+      appKey: "{{secrets.COMMENT_APPKEY}}",
       avatar: "monsterid",
     },
     subSidebar: "auto", //在所有页面中启用自动生成子侧边栏，原 sidebar 仍然兼容
