@@ -12,8 +12,8 @@ if (ENV === "dev") {
   };
 } else {
   valineConfig = {
-    appId: `${secrets.COMMENT_APPID}`,
-    appKey: `${secrets.COMMENT_APPKEY}`,
+    appId: '{{env.COMMENT_APPID}}',
+    appKey: '{{env.COMMENT_APPKEY}}',
     avatar: "monsterid",
   };
 }
