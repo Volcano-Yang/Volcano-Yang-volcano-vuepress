@@ -10,8 +10,8 @@ if (env === "dev") {
   };
 } else {
   valineConfig = {
-    appId: process.secrets.COMMENT_APPID,
-    appKey: process.secrets.COMMENT_APPKEY,
+    appId: process.env.COMMENT_APPID,
+    appKey: process.env.COMMENT_APPKEY,
     avatar: "monsterid",
   };
 }
@@ -53,7 +53,7 @@ module.exports = {
         icon: "reco-date",
       },
       {
-        text: "3" + process.secrets.COMMENT_APPID,
+        text: "3" + process.env.SECRETID,
         icon: "reco-suggestion",
         link: "/messageBoard", // messageBoard 只是自行新建的文件名，可自行命名
       },
