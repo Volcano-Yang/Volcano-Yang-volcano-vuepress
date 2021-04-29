@@ -10,8 +10,8 @@ if (env === "dev") {
   };
 } else {
   valineConfig = {
-    appId: process.env.secrets.COMMENT_APPID,
-    appKey: process.env.secrets.COMMENT_APPKEY,
+    appId: process.secrets.COMMENT_APPID,
+    appKey: process.secrets.COMMENT_APPKEY,
     avatar: "monsterid",
   };
 }
@@ -48,7 +48,7 @@ module.exports = {
         icon: "reco-home",
       },
       {
-        text: "2" + process.env.secrets.COMMENT_APPID,
+        text: "2" + process.env.ENVID,
         link: "/timeline/",
         icon: "reco-date",
       },
