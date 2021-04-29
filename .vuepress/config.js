@@ -1,5 +1,5 @@
 const moment = require("moment");
-let env = process.env.NODE_ENV || "prod";
+let env = process.env.MY_WEPACK_ENV || "prod";
 let valineConfig = {};
 if (env === "dev") {
   const { leanCloud } = require("./secrets");
