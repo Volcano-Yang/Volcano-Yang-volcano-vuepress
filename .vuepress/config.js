@@ -10,8 +10,8 @@ if (env === "dev") {
   };
 } else {
   valineConfig = {
-    appId: process.env.COMMENT_APPID,
-    appKey: process.env.COMMENT_APPKEY,
+    appId: process.env.secrets.COMMENT_APPID,
+    appKey: process.env.secrets.COMMENT_APPKEY,
     avatar: "monsterid",
   };
 }
@@ -43,17 +43,17 @@ module.exports = {
     subSidebar: "auto", //在所有页面中启用自动生成子侧边栏，原 sidebar 仍然兼容
     nav: [
       {
-        text: "首页",
+        text: "1" + process.env.COMMENT_APPID,
         link: "/",
         icon: "reco-home",
       },
       {
-        text: "时间线",
+        text: "2" + process.env.secrets.COMMENT_APPID,
         link: "/timeline/",
         icon: "reco-date",
       },
       {
-        text: "留言板",
+        text: "3" + process.secrets.COMMENT_APPID,
         icon: "reco-suggestion",
         link: "/messageBoard", // messageBoard 只是自行新建的文件名，可自行命名
       },
