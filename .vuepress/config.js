@@ -1,9 +1,7 @@
 const moment = require("moment");
-// 根据需要切换环境为dev或product
-const ENV = "product";
-// const ENV = "dev";
+let env = process.env.NODE_ENV || "prod";
 let valineConfig = {};
-if (ENV === "dev") {
+if (env === "dev") {
   const { leanCloud } = require("./secrets");
   valineConfig = {
     appId: leanCloud.appId,
@@ -12,11 +10,12 @@ if (ENV === "dev") {
   };
 } else {
   valineConfig = {
-    appId: '{{env.COMMENT_APPID}}',
-    appKey: '{{env.COMMENT_APPKEY}}',
+    appId: process.env.COMMENT_APPID,
+    appKey: process.env.COMMENT_APPKEY,
     avatar: "monsterid",
   };
 }
+
 module.exports = {
   title: "杨灿就是杨火山",
   description: "",
