@@ -18,6 +18,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     name: deploy
+    env:
+      COMMENT_APPID: ${{ secrets.COMMENT_APPID }}
+      COMMENT_APPKEY: ${{ secrets.COMMENT_APPKEY }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2

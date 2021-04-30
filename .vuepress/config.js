@@ -43,17 +43,17 @@ module.exports = {
     subSidebar: "auto", //在所有页面中启用自动生成子侧边栏，原 sidebar 仍然兼容
     nav: [
       {
-        text: "1" + process.env.COMMENT_APPID,
+        text: "首页",
         link: "/",
         icon: "reco-home",
       },
       {
-        text: "2" + process.env.ENVID,
+        text: "时间线",
         link: "/timeline/",
         icon: "reco-date",
       },
       {
-        text: "3" + process.env.SECRETID,
+        text: "留言板",
         icon: "reco-suggestion",
         link: "/messageBoard", // messageBoard 只是自行新建的文件名，可自行命名
       },
