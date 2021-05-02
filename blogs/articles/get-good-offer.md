@@ -3,8 +3,9 @@ title: 如何找一份好工作？一步一步进入腾讯阿里等大厂
 sidebar: 'auto'
 categories:
  - 原创文章
+ - 复盘总结
 tags:
- - 经验总结
+ - 求职攻略
 publish: true
 sticky : 1
 isShowComments: true

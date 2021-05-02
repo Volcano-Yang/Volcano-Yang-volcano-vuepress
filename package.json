@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "author": "reco_luan",
   "scripts": {
-    "start:dev": "MY_WEPACK_ENV=dev vuepress dev . --open --host \"localhost\"",
+    "dev": "MY_WEPACK_ENV=dev vuepress dev . --open --host \"localhost\"",
     "build:dev": "MY_WEPACK_ENV=dev vuepress build .",
     "build:prod": "MY_WEPACK_ENV=prod vuepress build .",
     "deploy": "cloudbase framework deploy"
