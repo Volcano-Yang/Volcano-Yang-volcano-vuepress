@@ -13,39 +13,69 @@ isShowComments: true
 >
 > 一、熟悉掌握熟悉的强类型定义，初步学习编写强类型代码。
 >
-> 1. 学习ts的声明变量类型，能够初步编写强类型代码；
->
-> 2. 学习ts的接口,进一步强定义对象的丰富属性；
->
-> 3. 学习ts的函数声明和实现定义，强类型化你的js函数；
+>1. 学习ts的声明变量类型，能够初步编写强类型代码；
+>2. 学习ts的接口，进一步强定义对象的丰富属性；
+>3. 学习ts的函数声明和实现定义，强类型化你的js函数；
 >
 > 二、灵活面对类型转换，类型报错，类型文件的声明和引入，灵活编写强类型代码。
 >
-> 4. 学习ts的类型断言（解释型类型转换）；
+>4. 学习ts的类型断言（解释型类型转换）；
 >5. 学习ts的泛型，更灵活的面对多可能性类型参数；
-> 6. 学习ts的类型声明文件，全局定义；
+>6. 学习ts的类型声明文件，全局定义；
 > 
->ts在线运行练习网站：https://www.tslang.cn/play/index.html
+> ts在线运行练习网站：https://www.tslang.cn/play/index.html
 
 ## 一、ts简介
 
 ### 1.什么是TypeScript(TS)？ 
-TypeScript简称TS
+
+TypeScript 是 JavaScript 的一个超集，主要提供了类型系统和对 ES6 的支持，它由 Microsoft 开发。
+
 TS和JS之间的关系其实就是Less/Sass和CSS之间的关系
 就像Less/Sass是对CSS进行扩展一样, TS也是对JS进行扩展
 就像Less/Sass最终会转换成CSS一样, 我们编写好的TS代码最终也会换成JS
 
 ### 2.为什么需要TypeScript?
+
 因为JavaScript是弱类型, 很多错误只有在运行时才会被发现
 而TypeScript是强类型, 它提供了一套静态检测机制,如何我们编码事中途变换变量的类型，ts就会在报错，帮助我们在编码时发现错误。
 
 > Ts为帮助js弥补在大型项目中的缺陷而生。
 
 ### 3.TypeScript特点
-- 支持最新的JavaScript新特特性
-- 支持代码静态检查
-- 支持诸如C,C++,Java,Go等后端语言中的特性
-(枚举、泛型、类型转换、命名空间、声明文件、类、接口等)
+
+- 支持代码静态检查，会在编译时对类型进行静态检查，如果发现有错误，编译的时候就会报错。但在运行时不会检查。
+- 增强了编辑器和 IDE 的功能，包括代码补全、接口提示、跳转到定义、重构等。
+- 支持诸如C，C++，Java，Go等后端语言中的特性。(枚举、泛型、类型转换、命名空间、声明文件、类、接口等)
+- 支持最新的JavaScript新特特性。
+
+示例：
+
+编译前hello.ts：
+
+```typescript
+function sayHello(person: string) {
+    return 'Hello, ' + person;
+}
+
+let user = 'Tom';
+console.log(sayHello(user));
+```
+
+编译后：hello.js
+
+```javascript
+function sayHello(person) {
+    return 'Hello, ' + person;
+}
+var user = 'Tom';
+console.log(sayHello(user));
+```
+
+上述例子中，我们用 `:` 指定 `person` 参数类型为 `string`。但是编译为 js 之后，并没有什么检查的代码被插入进来。
+
+这是因为 **TypeScript 只会在编译时对类型进行静态检查，如果发现有错误，编译的时候就会报错**。而在运行时，与普通的 JavaScript 文件一样，不会对类型进行检查。
+
 
 
 ## 二、ts中的类型声明
@@ -55,6 +85,7 @@ TypeScript支持与JavaScript几乎相同的数据类型，此外还提供了实
 ### 1.boolean、number、string简单类型的变量声明
 
 #### 布尔类型 boolean
+
 ```typescript
 let val2:boolean;
 val2 = true;
@@ -63,6 +94,7 @@ console.log(val2);
 ```
 
 #### 数值类型 number
+
 ```typescript
 let val1:number; // 定义了一个名称叫做val1的变量, 这个变量中将来只能存储数值类型的数据
 val1 = 123;
@@ -75,6 +107,7 @@ console.log(val1);
 ```
 
 #### 字符串类型 string
+
 ```typescript
 let val3:string;
 val3 = "123";
